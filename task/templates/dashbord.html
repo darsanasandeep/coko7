@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/task.css' %}"/>
+<style>
+    body{
+    background-image: url('{% static 'img2.jpg' %}');
+    background-size:cover;
+}
+body{
+    background-image: url('{% static 'img2.jpg' %}');
+    background-size:cover;
+}
+.a {
+    text-decoration:non;
+    color:white;
+    }
+    body {
+            margin:0;
+
+        }
+
+        .ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.li {
+  float: left;
+}
+
+.li, .a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content .a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+<body>
+
+{% load static %}
+
+<div class="row">
+        <ul class="ul">
+            <li class="li"><a class="active a" href="dashboard">Home</a></li>
+            <li class="li"><a class="a" href="viewtask">Pending Task</a></li>
+            <li class="li"><a class="a" href="completed">Completed Task</a></li>
+            <li class="li"><a class="a" href="addtask">Add Task</a></li>
+            <li class="dropdown li">
+                <a href="#" class="dropbtn a">Profile</a>
+                <div class="dropdown-content">
+                  <a href="profile" class="a">Create Profile</a>
+                  <a href="viewpro" class="a">View Profile</a>
+                  <a href="changepass" class="a">Change Password</a><hr>
+                    <a href="logout" class="a">Logout</a>
+                </div>
+              </li>
+        </ul>
+    </div>
+
+</body>
+</html>

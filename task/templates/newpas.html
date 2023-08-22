@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cokonet About</title>
+    {% load static %}
+    <style>
+        body {
+            margin:0;
+
+        }
+        input[type=text], select {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+          }
+
+          input[type=submit] {
+            width: 70%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+
+          input[type=submit]:hover {
+            background-color: #45a049;
+
+
+          }
+          input[type=text]{
+            width:70% ;
+           border-radius : 15px;
+
+          }
+          input[type=date]{
+            width: 70%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            box-sizing: border-box;
+
+          }
+          img{
+            padding-left: 150px;
+            padding-top : 100px;
+          }
+
+          .text-block {
+            position: absolute;
+            top: 160px;
+            left: 800px;
+            background-color: hsla(274, 23%, 27%, 0.2);
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: justify;
+            font-size: 20px;
+          }
+          form{
+            padding-left: 120px;
+          }
+          textarea {
+
+            height: 120px;
+            width: 70%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            box-sizing: border-box;
+
+          }
+
+.a {
+    text-decoration:non;
+    color:white;
+    }
+    body {
+            margin:0;
+
+        }
+
+        .ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.li {
+  float: left;
+}
+
+.li, .a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content .a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
+<body>
+
+{% load static %}
+
+<div class="row">
+        <ul class="ul">
+            <li class="li"><a class="active a" href="dashboard">Home</a></li>
+            <li class="li"><a class="a" href="viewtask">Pending Task</a></li>
+            <li class="li"><a class="a" href="completed">Completed Task</a></li>
+            <li class="li"><a class="a" href="addtask">Add Task</a></li>
+            <li class="dropdown li">
+                <a href="#" class="dropbtn a">Profile</a>
+                <div class="dropdown-content">
+                  <a href="profile" class="a">Create Profile</a>
+                  <a href="viewpro" class="a">View Profile</a>
+                  <a href="changepass" class="a">Change Password</a><hr>
+                    <a href="logout" class="a">Logout</a>
+                </div>
+              </li>
+        </ul>
+    </div>
+
+    <img src="{% static 'img1.jpg' %}" width="500">
+
+    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31417.17363553892!2d76.41227703631318!3d10.168728406492889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08079527932613%3A0x2bb3833201371fc6!2sKalady%2C%20Kerala!5e0!3m2!1sen!2sin!4v1688708582251!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+    <div class="text-block">
+
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" id="addr" name="old" placeholder="Old Password" ><br>
+                <input type="text" id="city" name="new" placeholder="New Password" ><br>
+                <input type="text" id="phone" name="cnew" placeholder="Conform Password" ><br>
+                <input type="date" id="DOB" name="DOB" placeholder="DOB" ><br>
+
+              <input type="submit" value="Submit"><br><br>
+            </form>
+
+
+    </div>
+</body>
+</html>
