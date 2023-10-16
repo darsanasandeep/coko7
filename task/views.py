@@ -54,7 +54,8 @@ def AddTask(request):
     return render(request,'addtask.html')
 
 def ViewTask(request):
-    data = UserTask.objects.filter(status="pending").order_by('due_date')
+    user_id = request.user.id
+    data = UserTask.objects.filter(status="pending",user_id=user_id).order_by('due_date')
     return render(request,'viewtask.html',{'data':data})
 
 def TaskStatus(request,id):
@@ -69,7 +70,8 @@ def DeleteTask(request,id):
     return redirect(ViewTask)
 
 def CompletedTask(request):
-    data = UserTask.objects.filter(status="completed")
+    user_id = request.user.id
+    data = UserTask.objects.filter(status="completed",user_id=user_id)
     return render(request,'Completed.html',{'data':data})
 
 def DetailedView(request,id):
